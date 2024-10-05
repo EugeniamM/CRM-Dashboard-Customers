@@ -1,0 +1,721 @@
+/* normalize */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* normalize */
+
+/* colors & fonts*/
+:root {
+	--main-font-color: #000000;
+	--version-color: #838383;
+
+	--selected-item_background-color: #5932ea;
+	--selected-item_font-color: #ffffff;
+
+	--tool-panel_background-color: #ffffff;
+	--tool-panel_text-color: #9197b3;
+	--tool-panel_user-title-color: #757575;
+	--tool-panel_background-color: #ffffff;
+
+	--search-background-color: #f9fbff;
+	/* --search-frame-color: #e7e7e7; */
+	--search-icon-color: #7e7e7e;
+	--search-placeholder-color: #b5b7c0;
+
+	--data-panel_background-color: #fafbff;
+	--data-panel_data-background-color: #ffffff;
+	--data-panel_status-color: #16c098;
+	--data-panel_data-text-color: #292d32;
+	--data-panel_data-table-header-color: #b5b7c0;
+	--data-panel_data-table-line-color: #eeeeee;
+	--data-panel_active-color: #008767;
+	--data-panel_active-border-color: #00b087;
+	--data-panel_active-background-color: rgba(22, 192, 152, 0.38);
+	--data-panel_inactive-color: #df0404;
+	--data-panel_inactive-background-color: #ffc5c5;
+	--data-panel_page-numbers-color: #404b52;
+
+	--main-font: "Poppins";
+	--generic-font: sans-serif;
+
+	/* связалась бы с дизайнером для уточнения необходимости 
+	такого количества практически одинаковых оттенков (серого или светлого, например) 
+	выглядит как ловушка для верстальщика :) */
+}
+
+/* 100	Thin (Hairline)
+200	Extra Light (Ultra Light)
+300	Light
+400	Normal
+500	Medium
+600	Semi Bold (Demi Bold)
+700	Bold
+800	Extra Bold (Ultra Bold)
+900	Black (Heavy) */
+
+body {
+	min-height: 100%;
+	width: 100%;
+	background: #edf3ff;
+}
+
+.main-block {
+	margin: auto;
+	max-width: 1440px;
+	background: var(--data-panel_background-color);
+	min-height: 100%;
+	display: flex;
+	padding-top: 1px;
+	box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+}
+
+.tool-panel {
+	max-width: 306px;
+	background-color: var(--tool-panel_background-color);
+	padding: 36px 28px 76px 28px;
+	box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+	background: var(--tool-panel_background-color);
+	display: flex;
+	flex-direction: column;
+	gap: 53px;
+}
+
+.tool-panel_header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.tool-panel_header-text {
+	font-family: var(--main-font, --generic-font);
+	color: var(--main-font-color);
+	font-family: var(--main-font, --generic-font);
+	font-weight: 600;
+	font-size: 26px;
+	letter-spacing: 0.01em;
+	flex-grow: 1;
+}
+
+.tool-panel_gamburger-icon,
+.gamburger-close-icon {
+	fill: var(--tool-panel_text-color);
+	display: none;
+	width: 37px;
+	height: 37px;
+}
+.gamburger-close-icon {
+	fill: var(--selected-item_font-color);
+}
+.version-text {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 10px;
+	letter-spacing: -0.01em;
+	color: var(--version-color);
+}
+
+.tool-panel_header-icon {
+	fill: var(--main-font-color);
+	width: 37px;
+	height: 37px;
+	vertical-align: baseline;
+}
+
+.tool-panel_item-icon {
+	fill: var(--tool-panel_text-color);
+	width: 24px;
+	height: 24px;
+	vertical-align: baseline;
+}
+.tool-panel_shevron-icon {
+	fill: var(--tool-panel_text-color);
+	width: 16px;
+	height: 16px;
+	vertical-align: baseline;
+	transition: fill 0.5s ease-out;
+}
+
+.tool-panel_item-icon {
+	fill: var(--tool-panel_text-color);
+	width: 24px;
+	height: 24px;
+	vertical-align: baseline;
+	transition: fill 0.5s ease-out;
+}
+
+.tool-panel_item-icon.selected,
+.tool-panel_shevron-icon.selected {
+	fill: var(--selected-item_font-color);
+}
+
+.tool-panel_item-text {
+	flex-grow: 1;
+	margin-left: 14px;
+}
+.tool-panel_curren-place {
+	width: 250px;
+	height: 46px;
+	padding: 11px 8px 11px 11px;
+	margin-left: 39px;
+	margin-top: 64px;
+	padding: 11px 8px 11px 11px;
+	display: flex;
+	align-items: center;
+}
+
+.tool-panel_navigation,
+.tool-panel_gamburger {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	flex-grow: 1;
+}
+
+.tool-panel_navigation-item {
+	width: 250px;
+	height: 46px;
+	padding: 11px 8px 11px 11px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	color: var(--tool-panel_text-color);
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: -0.01em;
+
+	text-decoration: none;
+
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+.tool-panel_navigation-item.pixel {
+	margin-bottom: 1px;
+	/* я не знаю, зачем эта разница в пиксель, 
+	но я его добавила для Pixel Perfect 
+	В реальном проекте я бы связалась с уточнением с дизайнером/менеджером*/
+}
+
+.tool-panel_navigation-item.selected {
+	background-color: var(--selected-item_background-color);
+	color: var(--selected-item_font-color);
+}
+
+.tool-panel_navigation-item:hover {
+	background-color: var(--selected-item_background-color);
+	color: var(--selected-item_font-color);
+}
+.tool-panel_navigation-item:hover svg {
+	fill: var(--selected-item_font-color);
+}
+
+.tool-panel_user-photo {
+	width: 42px;
+	height: auto;
+}
+
+.tool-panel_user-info {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+/* этот блок по макету расположен ниже края моего экрана 
+тут тоже надо уточнить*/
+
+.tool-panel_user-name {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0.01em;
+	/* тоже непонятно, зачем это */
+	color: var(--main-font-color);
+
+	margin-bottom: 6px;
+}
+
+.tool-panel_user-title {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 0.01em;
+	color: var(--tool-panel_user-title-color);
+}
+
+.search-block,
+.search-block-gamburger {
+	background-color: var(--search-background-color);
+	background-color: #008767;
+	border-radius: 10px;
+	width: 216px;
+	height: 38px;
+	padding: 7px 8px;
+	display: flex;
+	gap: 6px;
+	align-items: center;
+	justify-content: flex-start;
+	margin-right: 14px; /* должен ли этот блок выравниваться по правому краю таблицы? */
+	margin-top: 1px;
+}
+
+.search_input {
+	height: 100%;
+	width: 164px;
+	border: none;
+	background: none;
+}
+
+.search_input::placeholder {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: -0.01em;
+	color: var(--search-placeholder-color);
+}
+
+.seacrch-icon {
+	fill: var(--tool-panel_text-color);
+	width: 24px;
+	height: 24px;
+	vertical-align: baseline;
+}
+
+.data-panel {
+	padding: 46px 95px 76px 71px;
+	display: flex;
+	gap: 57px;
+	flex-direction: column;
+	width: 100%;
+}
+
+.data-panel_hello {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 24px;
+	color: var(--main-font-color);
+}
+.data-panel_data {
+	background-color: var(--data-panel_data-background-color);
+	width: 100%;
+	height: fit-content;
+	border-radius: 30px;
+}
+.data-panel_header-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 36px 39px 15px 38px;
+}
+
+.data-panel_data_header {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 600;
+	font-size: 22px;
+	letter-spacing: -0.01em;
+	color: var(--main-font-color);
+}
+
+.data-panel_data_status {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: -0.01em;
+	color: var(--data-panel_status-color);
+	margin-top: 15px;
+}
+
+.data-panel_data-table {
+	display: flex;
+	flex-direction: column;
+}
+
+.data-panel_data-row {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	padding: 19px 0;
+	margin: 0 39px 0 38px;
+	border-bottom: 1px solid var(--data-panel_data-table-line-color);
+}
+
+.data-panel_data-row.header {
+	margin: 0;
+	padding: 20px 39px 5px 38px;
+	min-height: 64px;
+}
+
+.data-panel_data-cell {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: -0.01em;
+	color: var(--data-panel_data-text-color);
+	display: flex;
+	align-items: center;
+}
+.data-panel_data-cell.header {
+	color: var(--data-panel_data-table-header-color);
+}
+
+.data-panel_data-cell.active {
+	border: 1px solid var(--data-panel_active-border-color);
+	background-color: var(--data-panel_active-background-color);
+	color: var(--data-panel_active-color);
+}
+.data-panel_data-cell.inactive {
+	border: 1px solid var(--data-panel_inactive-color);
+	background-color: var(--data-panel_inactive-background-color);
+	color: var(--data-panel_inactive-color);
+}
+
+.data-panel_data-cell.column1 {
+	width: 156px;
+}
+.data-panel_data-cell.column2 {
+	width: 115px;
+}
+.data-panel_data-cell.column3 {
+	width: 140px;
+}
+.data-panel_data-cell.column4 {
+	width: 191px;
+}
+.data-panel_data-cell.column5 {
+	width: 124px;
+}
+.data-panel_data-cell.column6 {
+	margin-top: 1px;
+	border-radius: 4px;
+	text-align: center;
+	width: 84px;
+	height: 29px;
+	justify-content: center;
+	/* vertical-align: baseline; */
+	/* padding: 5px; */
+}
+
+.data-panel_data-cell.column6.header {
+	height: auto;
+
+	/* "Status" смещен выглядит как выровненный по центру, но смещен
+	возможно это ошибка
+	Я выравняла по центру, но тоже связалась бы для уточнения */
+}
+
+.data-panel_table-bottom {
+	margin: 30px 39px 39px 38px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.data-panel_table-info {
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: -0.01em;
+	color: var(--data-panel_data-table-header-color);
+}
+.data-panel_page-numbers {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 11px;
+	justify-content: space-between;
+
+	font-family: var(--main-font, --generic-font);
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 100%;
+	letter-spacing: -0.01em;
+	color: var(--data-panel_page-numbers-color);
+}
+
+.data-panel_page-number {
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 5px 0px;
+	width: 26px;
+	height: 24px;
+	text-align: center;
+	transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.data-panel_page-number.selected,
+.data-panel_page-number:hover {
+	border: 1px solid var(--selected-item_background-color);
+	background-color: var(--selected-item_background-color);
+	color: var(--selected-item_font-color);
+}
+
+.data-panel_page-number.dots {
+	border: none;
+	background-color: none;
+	color: var(--main-font-color);
+	width: 12px;
+	padding: 8px 0px;
+}
+
+.gamburger_menu-block {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0 0 0 / 35%);
+	z-index: 5;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 32px;
+	transition: opacity 0.3s, visibility 0.3s;
+
+	align-items: flex-start;
+	justify-content: flex-start;
+	transform: translateX(150%);
+	transition: transform 0.6s ease-in-out;
+}
+
+.gamburger_menu-block.open {
+	transform: translateX(0%);
+	transition: transform 0.6s ease-in-out;
+}
+.search-block-gamburger-container {
+	padding: 24px;
+	height: fit-content;
+	width: 100%;
+}
+.search-block-gamburger {
+	width: 250px;
+	height: 46px;
+}
+.tool-panel_gamburger {
+	width: 100%;
+}
+.btn-gamburger-close {
+	position: absolute;
+	top: 32px;
+	right: 32px;
+}
+.tool-panel_item-icon.gamburger {
+	fill: var(--selected-item_font-color);
+}
+.tool-panel_navigation-item.gamburger {
+	color: var(--selected-item_font-color);
+}
+@media only screen and (max-width: 1279px) {
+	body {
+		background: var(--data-panel_background-color);
+	}
+	.main-block {
+		width: 100%;
+	}
+	.tool-panel {
+		position: fixed;
+
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		padding: 0;
+		box-shadow: none;
+		background-color: transparent;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.tool-panel_header {
+		box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+		background: var(--tool-panel_background-color);
+		padding: 36px 28px 16px 28px;
+	}
+
+	.tool-panel_gamburger-icon,
+	.gamburger-close-icon {
+		display: inherit;
+	}
+	.btn-gamburger-open,
+	.btn-gamburger-close {
+		border: none;
+		background: transparent;
+	}
+	.tool-panel_navigation {
+		display: none;
+	}
+	.tool-panel_gamburger {
+		flex-grow: 0;
+		padding: 24px;
+		border-bottom: 1px solid var(--data-panel_page-numbers-color);
+	}
+	.tool-panel_user-info {
+		box-shadow: 0 10px 60px 0 rgba(226, 236, 249, 0.5);
+		background: var(--tool-panel_background-color);
+		padding: 28px 28px 28px 28px;
+	}
+	.search-block {
+		display: none;
+	}
+
+	.data-panel {
+		gap: 24px;
+		padding: 124px 28px 116px 28px;
+	}
+	.data-panel_header-block {
+		padding-top: 12px;
+	}
+	.data-panel_hello {
+		padding: 0px 39px 0px 37px;
+	}
+	.data-panel_data_status {
+		margin-top: 8px;
+	}
+	.data-panel_data-cell.column1 {
+		font-weight: 600;
+	}
+
+	.data-panel_data-row {
+		justify-content: space-between;
+		gap: 8px;
+	}
+	.data-panel_data-row.header {
+		display: none;
+	}
+
+	.data-panel_table-bottom {
+		margin-bottom: 16px;
+		flex-direction: column;
+		align-content: center;
+		gap: 8px;
+	}
+	.data-panel_page-numbers {
+		gap: 4px;
+	}
+}

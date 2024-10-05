@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CRM Dashboard Customers</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- 
+		Буду очень благодарна за обратную связь 
+		eugenia.mukhamet@gmail.com
+		-->
+		<div class="main-block">
+			<div class="tool-panel">
+				<div class="tool-panel_header">
+					<svg class="tool-panel_header-icon">
+						<use xlink:href="icons/icons.svg#icon-dashboard_main"></use>
+					</svg>
+					<h1 class="tool-panel_header-text">Dashboard<sub class="version-text"> v.01</sub></h1>
+					<button id="btn-gamburger-open" class="btn-gamburger-open">
+						<svg class="tool-panel_gamburger-icon">
+							<use xlink:href="icons/icons.svg#icon-gamburger"></use>
+						</svg>
+					</button>
+				</div>
+				<nav class="tool-panel_navigation">
+					<a href="" class="tool-panel_navigation-item pixel">
+						<svg class="tool-panel_item-icon">
+							<use xlink:href="icons/icons.svg#icon-dashboard"></use>
+						</svg>
+						<div class="tool-panel_item-text">Dashboard</div>
+					</a>
+
+					<a href="" class="tool-panel_navigation-item">
+						<svg class="tool-panel_item-icon">
+							<use xlink:href="icons/icons.svg#icon-product"></use>
+						</svg>
+						<div class="tool-panel_item-text">Product</div>
+						<svg class="tool-panel_shevron-icon">
+							<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+						</svg>
+					</a>
+
+					<a href="" class="tool-panel_navigation-item selected">
+						<svg class="tool-panel_item-icon selected">
+							<use xlink:href="icons/icons.svg#icon-customers"></use>
+						</svg>
+						<div class="tool-panel_item-text">Customers</div>
+						<svg class="tool-panel_shevron-icon selected">
+							<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+						</svg>
+					</a>
+
+					<a href="" class="tool-panel_navigation-item">
+						<svg class="tool-panel_item-icon">
+							<use xlink:href="icons/icons.svg#icon-income"></use>
+						</svg>
+						<div class="tool-panel_item-text">Income</div>
+						<svg class="tool-panel_shevron-icon">
+							<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+						</svg>
+					</a>
+
+					<a href="" class="tool-panel_navigation-item">
+						<svg class="tool-panel_item-icon">
+							<use xlink:href="icons/icons.svg#icon-promote"></use>
+						</svg>
+						<div class="tool-panel_item-text">Promote</div>
+						<svg class="tool-panel_shevron-icon">
+							<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+						</svg>
+					</a>
+
+					<a href="" class="tool-panel_navigation-item">
+						<svg class="tool-panel_item-icon">
+							<use xlink:href="icons/icons.svg#icon-help"></use>
+						</svg>
+						<div class="tool-panel_item-text">Help</div>
+						<svg class="tool-panel_shevron-icon">
+							<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+						</svg>
+					</a>
+				</nav>
+				<div class="tool-panel_user-info">
+					<img src="/images/user_photo.png" alt="User photo" class="tool-panel_user-photo" />
+					<div>
+						<div class="tool-panel_user-name">Evano</div>
+						<div class="tool-panel_user-title">Project Manager</div>
+					</div>
+				</div>
+			</div>
+			<div class="data-panel">
+				<div class="data-panel_hello">Hello Evano 👋🏼,</div>
+				<div class="data-panel_data">
+					<div class="data-panel_header-block">
+						<div>
+							<h2 class="data-panel_data_header">All Customers</h2>
+							<h3 class="data-panel_data_status">Active Members</h3>
+						</div>
+						<div class="search-block">
+							<svg class="seacrch-icon">
+								<use xlink:href="icons/icons.svg#icon-search"></use>
+							</svg>
+							<input type="text" id="search" placeholder="Search" class="search_input" />
+						</div>
+					</div>
+
+					<!-- по поводу таблицы хотелось бы уточнить, как она должна вести себя на меньшем размере. 
+					Я установила точные пиксельные значения ширины колонок для соответствия макету, 
+					но мне кажется, это неоптимальный вариант, хотелось бы уточнить - по какому принципу 
+					формировалась ширина каждой колонки. 
+					В зависимости от желаемого поведения, возможно стоило выбрать CSS Grid, а не Flex  -->
+
+					<div class="data-panel_data-table">
+						<div class="data-panel_data-row header">
+							<div class="data-panel_data-cell column1 header">Customer Name</div>
+							<div class="data-panel_data-cell column2 header">Company</div>
+							<div class="data-panel_data-cell column3 header">Phone Number</div>
+							<div class="data-panel_data-cell column4 header">Email</div>
+							<div class="data-panel_data-cell column5 header">Country</div>
+							<div class="data-panel_data-cell column6 header">Status</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Jane Cooper</div>
+							<div class="data-panel_data-cell column2">Microsoft</div>
+							<div class="data-panel_data-cell column3">(225) 555-0118</div>
+							<div class="data-panel_data-cell column4">jane@microsoft.com</div>
+							<div class="data-panel_data-cell column5">United States</div>
+							<div class="data-panel_data-cell column6 active">Active</div>
+							<!-- Эти блоки Active разной ширины в разных строках -->
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Floyd Miles</div>
+							<div class="data-panel_data-cell column2">Yahoo</div>
+							<div class="data-panel_data-cell column3">(205) 555-0100</div>
+							<div class="data-panel_data-cell column4">floyd@yahoo.com</div>
+							<div class="data-panel_data-cell column5">Kiribati</div>
+							<div class="data-panel_data-cell column6 inactive">Inactive</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Ronald Richards</div>
+							<div class="data-panel_data-cell column2">Adobe</div>
+							<div class="data-panel_data-cell column3">(302) 555-0107</div>
+							<div class="data-panel_data-cell column4">ronald@adobe.com</div>
+							<div class="data-panel_data-cell column5">Israel</div>
+							<div class="data-panel_data-cell column6 inactive">Inactive</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Marvin McKinney</div>
+							<div class="data-panel_data-cell column2">Tesla</div>
+							<div class="data-panel_data-cell column3">(252) 555-0126</div>
+							<div class="data-panel_data-cell column4">marvin@tesla.com</div>
+							<div class="data-panel_data-cell column5">Iran</div>
+							<div class="data-panel_data-cell column6 active">Active</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Jerome Bell</div>
+							<div class="data-panel_data-cell column2">Google</div>
+							<div class="data-panel_data-cell column3">(629) 555-0129</div>
+							<div class="data-panel_data-cell column4">jerome@google.com</div>
+							<div class="data-panel_data-cell column5">Réunion</div>
+							<div class="data-panel_data-cell column6 active">Active</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Kathryn Murphy</div>
+							<div class="data-panel_data-cell column2">Microsoft</div>
+							<div class="data-panel_data-cell column3">(406) 555-0120</div>
+							<div class="data-panel_data-cell column4">kathryn@microsoft.com</div>
+							<div class="data-panel_data-cell column5">Curaçao</div>
+							<div class="data-panel_data-cell column6 active">Active</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Jacob Jones</div>
+							<div class="data-panel_data-cell column2">Yahoo</div>
+							<div class="data-panel_data-cell column3">(208) 555-0112</div>
+							<div class="data-panel_data-cell column4">jacob@yahoo.com</div>
+							<div class="data-panel_data-cell column5">Brazil</div>
+							<div class="data-panel_data-cell column6 active">Active</div>
+						</div>
+						<div class="data-panel_data-row">
+							<div class="data-panel_data-cell column1">Kristin Watson</div>
+							<div class="data-panel_data-cell column2">Facebook</div>
+							<div class="data-panel_data-cell column3">(704) 555-0127</div>
+							<div class="data-panel_data-cell column4">kristin@facebook.com</div>
+							<div class="data-panel_data-cell column5">Åland Islands</div>
+							<div class="data-panel_data-cell column6 inactive">Inactive</div>
+						</div>
+					</div>
+					<div class="data-panel_table-bottom">
+						<div class="data-panel_table-info">Showing data 1 to 8 of 256K entries</div>
+						<!-- тут удвоенный пробел перед 256, он нужен? -->
+						<div class="data-panel_page-numbers">
+							<div class="data-panel_page-number"><</div>
+							<div class="data-panel_page-number selected">1</div>
+							<div class="data-panel_page-number">2</div>
+							<div class="data-panel_page-number">3</div>
+							<div class="data-panel_page-number">4</div>
+							<div class="data-panel_page-number dots">...</div>
+							<div class="data-panel_page-number">40</div>
+							<div class="data-panel_page-number">></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="gamburger_menu-block" id="gamburger_menu-block">
+			<nav class="tool-panel_gamburger">
+				<a href="" class="tool-panel_navigation-item gamburger">
+					<svg class="tool-panel_item-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-dashboard"></use>
+					</svg>
+					<div class="tool-panel_item-text">Dashboard</div>
+				</a>
+
+				<a href="" class="tool-panel_navigation-item gamburger">
+					<svg class="tool-panel_item-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-product"></use>
+					</svg>
+					<div class="tool-panel_item-text">Product</div>
+					<svg class="tool-panel_shevron-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</a>
+
+				<a href="" class="tool-panel_navigation-item selected">
+					<svg class="tool-panel_item-icon selected">
+						<use xlink:href="icons/icons.svg#icon-customers"></use>
+					</svg>
+					<div class="tool-panel_item-text">Customers</div>
+					<svg class="tool-panel_shevron-icon selected">
+						<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</a>
+
+				<a href="" class="tool-panel_navigation-item gamburger">
+					<svg class="tool-panel_item-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-income"></use>
+					</svg>
+					<div class="tool-panel_item-text">Income</div>
+					<svg class="tool-panel_shevron-icon">
+						<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</a>
+
+				<a href="" class="tool-panel_navigation-item gamburger">
+					<svg class="tool-panel_item-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-promote"></use>
+					</svg>
+					<div class="tool-panel_item-text">Promote</div>
+					<svg class="tool-panel_shevron-icon">
+						<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</a>
+
+				<a href="" class="tool-panel_navigation-item gamburger">
+					<svg class="tool-panel_item-icon gamburger">
+						<use xlink:href="icons/icons.svg#icon-help"></use>
+					</svg>
+					<div class="tool-panel_item-text">Help</div>
+					<svg class="tool-panel_shevron-icon">
+						<use xlink:href="icons/icons.svg#icon-chevron-right"></use>
+					</svg>
+				</a>
+			</nav>
+			<div class="search-block-gamburger-container">
+				<div class="search-block-gamburger">
+					<svg class="seacrch-icon">
+						<use xlink:href="icons/icons.svg#icon-search"></use>
+					</svg>
+					<input type="text" id="search" placeholder="Search" class="search_input" />
+				</div>
+			</div>
+			<button id="btn-gamburger-close" class="btn-gamburger-close">
+				<svg class="gamburger-close-icon">
+					<use xlink:href="icons/icons.svg#icon-close_menu"></use>
+				</svg>
+			</button>
+		</div>
+		<script src="./js/menu.js"></script>
+	</body>
+</html>
