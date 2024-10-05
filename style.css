@@ -344,8 +344,6 @@ body {
 	gap: 12px;
 	align-items: center;
 }
-/* этот блок по макету расположен ниже края моего экрана 
-тут тоже надо уточнить*/
 
 .tool-panel_user-name {
 	font-family: var(--main-font, --generic-font);
@@ -379,7 +377,6 @@ body {
 	align-items: center;
 	justify-content: flex-start;
 	margin-right: 14px; /* должен ли этот блок выравниваться по правому краю таблицы? */
-	margin-top: 1px;
 }
 
 .search_input {
@@ -623,6 +620,9 @@ body {
 	top: 32px;
 	right: 32px;
 }
+.btn-gamburger-open {
+	display: none;
+}
 .tool-panel_item-icon.gamburger {
 	fill: var(--selected-item_font-color);
 }
@@ -666,6 +666,7 @@ body {
 	.btn-gamburger-close {
 		border: none;
 		background: transparent;
+		display: block;
 	}
 	.tool-panel_navigation {
 		display: none;
