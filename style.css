@@ -367,7 +367,6 @@ body {
 .search-block,
 .search-block-gamburger {
 	background-color: var(--search-background-color);
-	background-color: #008767;
 	border-radius: 10px;
 	width: 216px;
 	height: 38px;
